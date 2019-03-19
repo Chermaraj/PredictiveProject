@@ -30,61 +30,98 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="app\forms.py" />
-    <Compile Include="app\models.py" />
-    <Compile Include="app\tests.py" />
-    <Compile Include="app\views.py" />
-    <Compile Include="app\__init__.py" />
-    <Compile Include="app\migrations\__init__.py" />
     <Compile Include="manage.py" />
+    <Compile Include="PredictiveAcceptance\admin.py" />
+    <Compile Include="PredictiveAcceptance\apps.py" />
+    <Compile Include="PredictiveAcceptance\filters.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PredictiveAcceptance\forms\SearchUniversityForms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PredictiveAcceptance\forms\UserLoginForms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PredictiveAcceptance\forms\UserRegisterForms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PredictiveAcceptance\validation.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PredictiveAcceptance\views\CreateUniversityView.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PredictiveAcceptance\forms\CreateUniversityforms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PredictiveAcceptance\migrations\__init__.py" />
+    <Compile Include="PredictiveAcceptance\models.py" />
+    <Compile Include="PredictiveAcceptance\tests.py" />
+    <Compile Include="PredictiveAcceptance\training_models\ubc_regression_model.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PredictiveAcceptance\views\HomePageView.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PredictiveAcceptance\views\SearchUniversityView.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PredictiveAcceptance\views\UserLoginView.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PredictiveAcceptance\views\UserRegisterView.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PredictiveAcceptance\__init__.py" />
+    <Compile Include="PredictiveAcceptance\global_config.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PredictiveProject\__init__.py" />
     <Compile Include="PredictiveProject\settings.py" />
     <Compile Include="PredictiveProject\urls.py" />
     <Compile Include="PredictiveProject\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\" />
-    <Folder Include="app\migrations\" />
-    <Folder Include="app\static\" />
-    <Folder Include="app\static\app\" />
-    <Folder Include="app\static\app\content\" />
-    <Folder Include="app\static\app\fonts\" />
-    <Folder Include="app\static\app\scripts\" />
-    <Folder Include="app\templates\" />
-    <Folder Include="app\templates\app\" />
+    <Folder Include="PredictiveAcceptance\" />
+    <Folder Include="PredictiveAcceptance\migrations\" />
+    <Folder Include="PredictiveAcceptance\forms\" />
+    <Folder Include="PredictiveAcceptance\views\" />
+    <Folder Include="PredictiveAcceptance\training_models\" />
+    <Folder Include="PredictiveAcceptance\templates\" />
+    <Folder Include="PredictiveAcceptance\templates\PredictiveAcceptance\" />
     <Folder Include="PredictiveProject\" />
+    <Folder Include="static\" />
+    <Folder Include="static\images\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="libman.json" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\about.html" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\base.html" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\footer.html" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\HomePage.html" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\index.html" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\layout.html" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\Login.html" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\messages.html" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\NavBar.html" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\UniversitySearch.html" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\UserRegister.html" />
+    <Content Include="static\images\LoginBackground.jpg" />
+    <Content Include="static\images\RegisterBackground.jpg" />
+    <Content Include="static\images\Register_Image.jpg" />
+    <Content Include="static\images\study-abroad.jpg" />
+    <Content Include="static\images\study-abroad.png" />
+    <Content Include="static\images\study.png" />
+    <Content Include="static\images\study1.jpg" />
+    <Content Include="Procfile" />
     <Content Include="requirements.txt" />
-    <Content Include="db.sqlite3" />
-    <Content Include="app\static\app\content\bootstrap.css" />
-    <Content Include="app\static\app\content\bootstrap.min.css" />
-    <Content Include="app\static\app\content\site.css" />
-    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="app\static\app\scripts\bootstrap.js" />
-    <Content Include="app\static\app\scripts\bootstrap.min.js" />
-    <Content Include="app\static\app\scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="app\static\app\scripts\jquery-1.10.2.js" />
-    <Content Include="app\static\app\scripts\jquery-1.10.2.min.js" />
-    <Content Include="app\static\app\scripts\jquery-1.10.2.min.map" />
-    <Content Include="app\static\app\scripts\jquery.validate-vsdoc.js" />
-    <Content Include="app\static\app\scripts\jquery.validate.js" />
-    <Content Include="app\static\app\scripts\jquery.validate.min.js" />
-    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="app\static\app\scripts\modernizr-2.6.2.js" />
-    <Content Include="app\static\app\scripts\respond.js" />
-    <Content Include="app\static\app\scripts\respond.min.js" />
-    <Content Include="app\static\app\scripts\_references.js" />
-    <Content Include="app\templates\app\about.html" />
-    <Content Include="app\templates\app\contact.html" />
-    <Content Include="app\templates\app\index.html" />
-    <Content Include="app\templates\app\layout.html" />
-    <Content Include="app\templates\app\login.html" />
-    <Content Include="app\templates\app\loginpartial.html" />
+    <Content Include="runtime.txt" />
+    <Content Include="static\base.css" />
+    <Content Include="static\homepage.css" />
+    <Content Include="static\Login.css" />
+    <Content Include="static\site.css" />
+    <Content Include="static\userRegister.css" />
+    <Content Include="static\style.css" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.html">

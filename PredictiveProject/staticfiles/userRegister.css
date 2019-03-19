@@ -1,0 +1,9 @@
+.bodyBackGround {
+    background-image: url(/static/images/RegisterBackground.jpg);
+    background-repeat: no-repeat;
+   # height: 768px;
+    background-position: 50%;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}

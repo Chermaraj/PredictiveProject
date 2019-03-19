@@ -1,0 +1,18 @@
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    color: #000000;
+    background-color: #ff9800;
+    border-color: #ff9800;
+}
+
+.row.content {
+    height: 450px
+}
+
+
+footer {
+    background-color: #ff9800;
+    color: white;
+    padding: 15px;
+}

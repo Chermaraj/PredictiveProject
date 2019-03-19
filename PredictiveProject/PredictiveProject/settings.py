@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 import posixpath
+import django_heroku
+import dj_database_url
+from django.contrib.messages import constants as messages
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -32,14 +36,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'app',
-    # Add your apps here to enable them
+    'PredictiveAcceptance',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'widget_tweaks',
+    'bootstrap3',
+    'crispy_forms',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -50,7 +56,8 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',    
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'PredictiveProject.urls'
@@ -58,7 +65,7 @@ ROOT_URLCONF = 'PredictiveProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates"),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,6 +78,14 @@ TEMPLATES = [
     },
 ]
 
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
+
 WSGI_APPLICATION = 'PredictiveProject.wsgi.application'
 
 
@@ -79,11 +94,17 @@ WSGI_APPLICATION = 'PredictiveProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'predictive_db',
+        'USER': 'postgres',
+        'PASSWORD': 'sbuniv116',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -94,6 +115,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS': {
+            'min_length': 9,
+        }
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
@@ -118,9 +142,21 @@ USE_L10N = True
 USE_TZ = True
 
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
 
-STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+#STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+BOOTSTRAP3 = {'include_jquery': True}
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+django_heroku.settings(locals())

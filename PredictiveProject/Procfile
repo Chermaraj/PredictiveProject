@@ -1,0 +1,1 @@
+web: gunicorn PredictiveProject.wsgi:application --log-file -

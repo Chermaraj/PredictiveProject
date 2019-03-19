@@ -1,0 +1,44 @@
+﻿{% extends "PredictiveAcceptance/layout.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+  <form method="get">
+    <div class="well">
+      <h4 style="margin-top: 0">Filter</h4>
+      <div class="
+           ">
+        <div class="Label1">
+          {{ filter.form.university_code.label_tag }}
+          {% render_field filter.form.university_code class="form-control" %}
+        </div>
+        <div class="Label2">
+          {{ filter.form.university_name.label_tag }}
+          {% render_field filter.form.university_name class="form-control" %}
+        </div>     
+     </div>
+      <button type="submit" class="btn btn-primary">
+        <span class="Button1"></span> Search
+      </button>
+    </div>
+  </form>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>University Code</th>
+        <th>University name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in filter.qs %}
+        <tr>
+          <td>{{ user.university_code }}</td>
+          <td>{{ user.university_name }}</td>
+      {% empty %}
+        <tr>
+          <td colspan="5">No data</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

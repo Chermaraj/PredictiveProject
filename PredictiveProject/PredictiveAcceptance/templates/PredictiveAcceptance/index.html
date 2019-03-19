@@ -1,0 +1,24 @@
+{% extends "PredictiveAcceptance/layout.html" %}
+{% block content %}
+<div class="container">
+<div class="row">
+<div class="col-md-12 order-md-1">
+
+ <form id="createUniv" class="CreateUniversity" method="POST" action="create_university">
+                    {% csrf_token %}
+<div class="form-label-group">
+                        {{ form.university_code }}
+<label for="id_full_name">University Code</label></div>
+<div class="form-label-group">
+                        {{ form.university_name }}
+<label for="id_email">Unviersity Name</label></div>
+<div class="button">
+     <input type="submit" value="Save Unviersity"> </div>
+                    <!--<button  id="btnContactUs">Save Unviersity</button></div>-->
+
+</form>
+</div>
+</div>
+</div>
+
+{% endblock %}
