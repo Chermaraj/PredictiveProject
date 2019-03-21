@@ -44,7 +44,7 @@ def userId():
     return cursor.fetchone()[0]
 
 def get_userType():
-    return UserTypes.objects.get(user_type   "Student")
+    return UserTypes.objects.get(user_type = "Student")
 
 class PredictiveUsers(models.Model):
     user_id = models.IntegerField(primary_key=True, default=userId)
@@ -52,7 +52,7 @@ class PredictiveUsers(models.Model):
     firstname = models.CharField(max_length=30)
     middlename = models.CharField(max_length=30, blank=True, null=True)
     lastname = models.CharField(max_length=20)
-    password = models.CharField(max_length=50)
+    password = models.CharField(max_length=200)
     email_address = models.CharField(unique=True, max_length=100)
     user_type_id = models.ForeignKey('UserTypes', db_column='user_type_id' ,default=lambda: get_userType(),on_delete = models.CASCADE)    
     #user_type = models.ForeignKey('UserTypes', db_column='user_type' ,default= 1)

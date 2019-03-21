@@ -25,11 +25,11 @@ def userLogin(request):
             # logic into the data if there is such a need 
             # before writing to the database 
   
-            # Finally write the changes into database   
-            messages.success(request, 'Login Successfully registered successfully!', extra_tags='alert')
+            # Creatinbg Session with logged in user   
+            request.session['username'] = form.cleaned_data.get('username')
   
             # render it to some another page indicating username was created successfully  
-            return render(request,"PredictiveAcceptance/Login.html",{'form':form})
+            return redirect(request,"PredictiveAcceptance/HomePage.html")
               
         else: 
           

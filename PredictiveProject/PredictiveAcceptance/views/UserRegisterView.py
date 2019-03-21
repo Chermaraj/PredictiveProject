@@ -2,6 +2,7 @@ from django.shortcuts import HttpResponse, render, redirect
 from PredictiveAcceptance.forms.UserRegisterForms import userRegisterForm
 from PredictiveAcceptance.models import PredictiveUsers
 from django.contrib import messages
+import bcrypt
 
 
 def userRegister(request): 
@@ -23,7 +24,11 @@ def userRegister(request):
             # Temporarily make an object to be add some 
             # logic into the data if there is such a need 
             # before writing to the database    
-            post = form.save(commit = False) 
+            post = form.save(commit = False)
+            passwd = form.cleaned_data.get("password")
+            hashed_password = bcrypt.hashpw(request.POST['password'].encode(), bcrypt.gensalt())
+            encrypted_password =  hashed_password.decode('utf-8')
+            post.password = encrypted_password
   
             # Finally write the changes into database 
             post.save()   

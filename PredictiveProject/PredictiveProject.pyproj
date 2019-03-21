@@ -106,6 +106,7 @@
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\NavBar.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\UniversitySearch.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\UserRegister.html" />
+    <Content Include="static\images\HomeBackground.jpg" />
     <Content Include="static\images\LoginBackground.jpg" />
     <Content Include="static\images\RegisterBackground.jpg" />
     <Content Include="static\images\Register_Image.jpg" />

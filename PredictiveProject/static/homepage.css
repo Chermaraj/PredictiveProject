@@ -9,7 +9,7 @@ body, html {
 
 .parallax {
     /* The image used */
-    background-image: url(/static/images/study-abroad.jpg);
+    background-image: url(/static/images/HomeBackground.jpg);
     /* Set a specific height */
     height: 100%;
     /* Create the parallax scrolling effect */
@@ -40,7 +40,7 @@ body, html {
 }
 
 footer {
-    background-color: #ff9800;
+    background-color: #FF4500;
     color: white;
     padding: 15px;
 }

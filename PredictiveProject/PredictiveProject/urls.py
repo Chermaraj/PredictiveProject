@@ -3,6 +3,7 @@ Definition of urls for PredictiveProject.
 """
 
 from django.conf.urls import include,url
+from django.urls import path
 from PredictiveAcceptance.views import CreateUniversityView,SearchUniversityView,HomePageView,UserRegisterView,UserLoginView
 #Django processess URL patterns in the order they appear in array 
 urlpatterns = [

@@ -5,7 +5,8 @@ from PredictiveAcceptance.models  import UserTypes
 from django.core.exceptions import ValidationError
 import django.contrib.auth.password_validation as validators
 from django.core.exceptions import EmptyResultSet
-import re  
+import re 
+import bcrypt
 
 class userLoginForm(forms.ModelForm):
 
@@ -61,8 +62,8 @@ def validate_userPassword(username,password):
  
    if PredictiveUsers.objects.filter(username=username).exists():   
      user = PredictiveUsers.objects.filter(username=username).first()
-     if  (password != user.password):
-      raise forms.ValidationError(u'Invalid password.')
+     if not (bcrypt.checkpw(password.encode('utf-8'), user.password.encode('utf-8'))):
+       raise forms.ValidationError(u'Invalid password.')
    return password
 
 def validate_userExists(username):

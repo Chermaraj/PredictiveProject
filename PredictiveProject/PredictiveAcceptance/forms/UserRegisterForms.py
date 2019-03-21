@@ -72,11 +72,11 @@ class userRegisterForm(forms.ModelForm):
                 self._errors['email_address'] = self.error_class([e])
 
            try:
-                validate_password(password, None,None)
+                validate_password(password, self.data,None)
            except ValidationError as e:
                 self._errors['password'] = self.error_class([e])
    
-           validate_password(password,self.data,None )
+           #validate_password(password,None,None )
 
            return self.cleaned_data
 
