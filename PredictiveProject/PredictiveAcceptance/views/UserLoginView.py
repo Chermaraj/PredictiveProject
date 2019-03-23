@@ -1,4 +1,4 @@
-from django.shortcuts import HttpResponse, render, redirect 
+from django.shortcuts import HttpResponse, render, redirect
 from PredictiveAcceptance.forms.UserLoginForms import userLoginForm
 from PredictiveAcceptance.models import PredictiveUsers
 from PredictiveAcceptance.models import UserTypes
@@ -25,11 +25,11 @@ def userLogin(request):
             # logic into the data if there is such a need 
             # before writing to the database 
   
-            # Creatinbg Session with logged in user   
+            # Creating Session with logged in user   
             request.session['username'] = form.cleaned_data.get('username')
   
             # render it to some another page indicating username was created successfully  
-            return redirect(request,"PredictiveAcceptance/HomePage.html")
+            return redirect('HomePage')
               
         else: 
           

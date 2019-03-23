@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js">
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />    
-    <link rel="stylesheet" type="text/css" href="{% static 'homepage.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'homepage.css' %}" />    
+    <link rel="stylesheet" type="text/css" href="{% static 'homeSearch.css' %}" />
     <meta charset="utf-8" />
 </head>
 <body>
@@ -38,7 +39,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#" style="color:white">
                         <span class="glyphicon glyphicon-log-in" style="color:white">
-                            </span>Welcome {{user.first_name}} {{user.last_name}}</a></li>
+                            </span>Welcome {{userList.firstname}} {{userList.lastname}}</a></li>
                 </ul>
             </div>
         </div>

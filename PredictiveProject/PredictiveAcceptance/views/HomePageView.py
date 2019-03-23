@@ -1,6 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render,render_to_response
 from django.http import HttpResponse
 from PredictiveAcceptance.models import PredictiveUsers
+from django.template import RequestContext
+from PredictiveAcceptance.forms.SearchUniversityForms import SearchUniversity
+from PredictiveAcceptance.models import UniversityNames
+from PredictiveAcceptance.models import LookupValues
+
 
 def HomePage(request): 
 
@@ -35,8 +40,14 @@ def HomePage(request):
         # If the request is a GET request then, 
         # create an empty form object and  
         # render it into the page 
-        user = PredictiveUsers.objects.filter(username=request.session['username'])
+        username = request.session['username']
+        univ_list = UniversityNames.objects.all();
+        country_list = LookupValues.objects.get(lookup_type='COUNTRY')
+        form = SearchUniversity(request.GET)
         context = {
-        "user": user    
+        "univ_list": univ_list,
+        "country_list":country_list,
+        "form" : form
              } 
+
         return render(request, 'PredictiveAcceptance/HomePage.html', context) 

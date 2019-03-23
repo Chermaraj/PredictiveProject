@@ -11,8 +11,7 @@ def searchUniversity (request):
         form = SearchUniversity(request.GET)
         universities_list = UniversityNames.objects.all()
         Unviersity_Filter = UnviersityNamesFilter(request.GET, queryset=universities_list)
-        return render(request, 'PredictiveAcceptance/UniversitySearch.html',
-                      {'form': form ,'filter': Unviersity_Filter})
+        return redirect('HomePage',{'form': form })
 
    
 def about(request):

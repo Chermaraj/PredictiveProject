@@ -87,4 +87,4 @@ class PredictiveModels:
         self.buildUoAModel.build_uoa_model()
 
 PredictiveModels = PredictiveModels()
-PredictiveModels.trainModel()
+PredictiveModels.trainModel()    

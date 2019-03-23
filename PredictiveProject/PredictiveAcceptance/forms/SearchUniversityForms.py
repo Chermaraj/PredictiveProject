@@ -10,10 +10,20 @@ class SearchUniversity(forms.ModelForm):
                                       'placeholder': 'Enter University Code',
                                       'maxlength': '75'}))
 
-    university_name  = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control',
-                                      'placeholder': 'Enter University Name',
-                                      'maxlength': '75'}))
+    #university_name  = forms.ModelChoiceField(queryset= UniversityNames.objects.all(),
+                                     #  empty_label="Select any Unviersity Name",
+                                      # required=True)
+
+    university_name = forms.ModelMultipleChoiceField(
+    label='List',
+    required=False,
+    queryset=UniversityNames.objects.all(),
+    widget= forms.SelectMultiple(attrs={'class': 'input-field second-wrap'}))
+
 
     class Meta:
         model = UniversityNames 
         fields = ('university_code', 'university_name')
+        #widgets = {
+         #   'university_name': forms.Select(attrs={'class':'inner-form'}),
+          #  }

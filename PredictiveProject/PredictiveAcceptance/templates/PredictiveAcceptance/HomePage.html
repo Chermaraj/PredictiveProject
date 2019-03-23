@@ -1,12 +1,40 @@
 ﻿{% extends "PredictiveAcceptance/base.html" %}
 {% load staticfiles %}   
 {% block content %}
+
 <div>
 
 </div>
     <div class="parallax" height="100%" >
      <div class ="Welcome">
-       <h1>Graduate Program Accepatance Prediction</h1>
+        <div class="s01">
+      <form>
+           {% csrf_token %}
+        <fieldset>
+          <legend>Discover the Unviersity</legend>
+        </fieldset>
+        <div class="inner-form">
+         <div class="input-field first-wrap"> 
+            <select class="input-field second-wrap input-lg " id="location" style="width:200px;" font-size=10px;  font-family='sans-serif'>
+            <option default>Select any country</option>
+            
+            <option value="{{ country_list.lookup_code }}">{{ country_list.lookup_value }}</option> 
+           </select>
+          </div>
+          <div class="input-field second-wrap">
+           <select class="input-field second-wrap input-lg " id="location" style="width:200px;" font-size=10px;  font-family='sans-serif'>
+               <option default>Select any university</option>
+               {% for univ in univ_list %}
+               <option value="{{ univ.university_code }}">{{ univ.university_name }}</option>
+               {% endfor %}               
+           </select>
+          </div>
+          <div class="input-field third-wrap">
+            <button class="btn-search" type="button">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
      </div>       
     </div>
     <div class="parallax1">

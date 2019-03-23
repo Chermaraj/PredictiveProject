@@ -34,7 +34,7 @@ class LookupValues(models.Model):
         db_table = 'lookup_values'
 
     def __str__(self):
-        return '%s %s' % (self.lookup_code, self.lookup_type)
+        return u'{0}'.format(self.lookup_code)
 
  
 
@@ -88,6 +88,9 @@ class UniversityNames(models.Model):
     class Meta:
         managed = False
         db_table = 'university_names'
+
+    def __str__(self):
+     return u'{0}'.format(self.university_name)
 
 
 class UniversitySampleData(models.Model):
