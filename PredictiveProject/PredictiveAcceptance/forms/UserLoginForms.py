@@ -1,4 +1,4 @@
- from django import forms
+from django import forms
 from django.forms import ModelForm
 from PredictiveAcceptance.models import PredictiveUsers
 from PredictiveAcceptance.models  import UserTypes

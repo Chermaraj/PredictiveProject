@@ -1,0 +1,8 @@
+.bodyBackGround {
+    background-image: url("/static/images/LoginBackground.c2566272b34d.jpg");
+    background-repeat: no-repeat;
+    height: 810px;
+    background-position: 100%;
+    background-size: cover;
+    overflow: hidden;
+}

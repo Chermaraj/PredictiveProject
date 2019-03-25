@@ -54,6 +54,9 @@
     <Compile Include="PredictiveAcceptance\validation.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PredictiveAcceptance\views\CreateStudentProfileView.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PredictiveAcceptance\views\CreateUniversityView.py">
       <SubType>Code</SubType>
     </Compile>
@@ -115,6 +118,7 @@
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\Login.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\messages.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\NavBar.html" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\StudentProfileCreation.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\universityRanking.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\UniversitySearch.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\UserRegister.html" />
@@ -122,6 +126,7 @@
     <Content Include="static\images\education.jpg" />
     <Content Include="static\images\HomeBackground.jpg" />
     <Content Include="static\images\LoginBackground.jpg" />
+    <Content Include="static\images\ProfileBackground.jpg" />
     <Content Include="static\images\RankBackground.jpg" />
     <Content Include="static\images\RegisterBackground.jpg" />
     <Content Include="static\images\Register_Image.jpg" />
@@ -137,7 +142,6 @@
     <Content Include="static\images\UBC.jpg" />
     <Content Include="static\images\UOA.jpg" />
     <Content Include="static\images\UOR.jpg" />
-    <Content Include="static\js\UniversityRank.js" />
     <Content Include="static\Login.css" />
     <Content Include="static\site.css" />
     <Content Include="static\userRegister.css" />

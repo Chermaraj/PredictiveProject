@@ -56,7 +56,7 @@ class PredictiveUsers(models.Model):
     email_address = models.CharField(unique=True, max_length=100)
     user_type_id = models.ForeignKey('UserTypes', db_column='user_type_id' ,default=lambda: get_userType(),on_delete = models.CASCADE)    
     #user_type = models.ForeignKey('UserTypes', db_column='user_type' ,default= 1)
-    created_on = models.DateTimeField(auto_now = True)
+    created_on = models.DateTimeField(auto_now_add = True)
 
     class Meta:
         managed = False
@@ -66,11 +66,11 @@ class PredictiveUsers(models.Model):
 class StudentProfiles(models.Model):
     user = models.ForeignKey(PredictiveUsers, models.DO_NOTHING, primary_key=True)
     grescore = models.IntegerField()
-    englishtest = models.IntegerField()
-    undergradcgpa = models.IntegerField()
+    englishtest = models.DecimalField(max_digits=2, decimal_places=1)
+    undergradcgpa = models.DecimalField(max_digits=2, decimal_places=1)
     workex_months = models.IntegerField()
     research_skills = models.IntegerField()
-    created_on = models.DateTimeField()
+    created_on = models.DateTimeField(auto_now = True)
 
     class Meta:
         managed = False

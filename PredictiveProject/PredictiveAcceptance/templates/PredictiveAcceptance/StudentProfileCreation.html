@@ -1,0 +1,72 @@
+﻿{% extends "PredictiveAcceptance/base.html" %}
+{% load staticfiles %}   
+{% block content %}
+<div class="container-fluid profileBackGround">
+    
+<div class="col-md-4 col-md-offset-4">
+<fieldset class="card-header text-center  profileForm">
+                <legend>Student Profile Form</legend>
+                </fieldset>
+                       
+                        <form  method="POST" action="/StudentProfileCreation/">
+                            {% csrf_token %}
+                            <div class="form-label-group">
+                            <label class="profileLabel">User Name :</label>
+                               <span class="profileLabel"> {{userList.username }} </span>
+                            </div>
+                            <div class="form-label-group">
+                            <label class="profileLabel">First Name :</label>
+                               <span class="profileLabel"> {{userList.firstname }} </span>
+                            </div>
+                             <div class="form-label-group">
+                            <label class="profileLabel">Last Name :</label>
+                                <span class="profileLabel"> {{userList.lastname }}  </span>
+                            </div>
+                            
+                            <div class="form-label-group">
+                            <label class="profileLabel">GRE Score</label>
+                                {{form.grescore }}
+                            <div class="form-group has-danger">
+                            <div class="form-control-feedback">
+                                {{ form.grescore.errors }}</div>
+                            </div>
+							</div>
+                            <div class="form-label-group">
+                            <label class="profileLabel">English Test Score (Ex.8.0)</label>
+                            {{ form.englishtest }}
+                            <div class="form-group has-danger">
+                            <div class="form-control-feedback">
+                                {{ form.englishtest.errors }}</div>
+                            </div>
+							</div>
+                            <div class="form-label-group">
+                            <label class="profileLabel">Undergraduate CGPA (Ex.7.5)</label>
+                            {{ form.undergradcgpa }}
+                            <div class="form-group has-danger">
+                            <div class="form-control-feedback">
+                                {{ form.undergradcgpa.errors }}</div>
+                            </div>
+							</div>
+                            <div class="form-label-group">
+                            <label class="profileLabel">Work Experience (in Months)</label>
+                            {{ form.workex_months }}
+                            <div class="form-group has-danger">
+                            <div class="form-control-feedback">
+                                {{ form.workex_months.errors }}</div>
+                            </div>
+							</div>
+                            <div class="form-label-group">
+                            <label class="profileLabel">Rate your research skills (%)</label>
+                            {{ form.research_skills }}
+                            <div class="form-group has-danger">
+                            <div class="form-control-feedback">{{ form.research_skills.errors }}</div>
+                            </div>
+							</div>
+                            <div class="mx-auto text-center">
+                                <input type="submit" value="Create Profile" class="btn btn-primary">
+                            </div>
+                        </form>
+                    </div>
+</div>
+{% endblock %}
+
