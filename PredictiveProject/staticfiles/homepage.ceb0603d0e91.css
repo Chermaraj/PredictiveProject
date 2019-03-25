@@ -1,0 +1,71 @@
+
+.row.content {
+    height: 650px
+}
+
+body, html {
+    height: 100%;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("/static/images/HomeBackground.844ebafd4b17.jpg");
+    /* Set a specific height */
+    height: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 0px;
+}
+
+.Welcome {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.parallax1 {
+    /* The image used */
+    background-image: url("/static/images/study.c38fdd9a457f.png");
+    /* Set a specific height */
+    height: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer {
+    background-color: #FF4500;
+    color: white;
+    padding: 15px;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: table;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.columnOne {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.columnInside {
+    width: 100%;
+    float: left;
+}

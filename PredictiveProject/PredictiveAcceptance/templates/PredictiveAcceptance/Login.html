@@ -27,16 +27,9 @@
                 <div class="card">
                     <h4 class="card-header text-center">User Login</h4>
                     <div class="card-block">
-                        <form class="userLogin" method="post" action="">
+                        <form class="userLogin" method="post" action="/userLogin/">
                             {% csrf_token %}
-                               {% if messages %}
-                            <ul class="messages">
-                            {% for message in messages %}
-                                 <li class="{{ message.tags }}">{{ message }}</li>
-                            {% endfor %}
-                             </ul>
-                            {% endif %}
-                           	<div class="form-label-group">
+                            <div class="form-label-group">
                             <label>User Name</label>
                             {{ form.username }}
                             <div class="form-group has-danger">

@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+{% load bootstrap3 %}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js">    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	
+  
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />    
+    <link rel="stylesheet" type="text/css" href="{% static 'homepage.css' %}" />    
+    <link rel="stylesheet" type="text/css" href="{% static 'homeSearch.css' %}" /> 
+    <script type='text/javascript' src="{% static "js/UniversityRank.js" %}"></script>
+    <meta charset="utf-8" />
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" >
+
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--<a class="navbar-brand" style="color:white" href="#">Logo</a>-->
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav" style="color:white">
+                    <li><a href="{% url 'HomePage' %}" style="color:white">Home</a></li>                    
+                    <li><a href="{% url 'about' %}"  style="color:white">Profile</a></li>                                    
+                    <li><a href="{% url 'universityRank' %}"  style="color:white">Unviersity Ranking</a></li>  
+                    <li><a href="{% url 'about' %}"  style="color:white">Unviersities</a></li>  
+                    <li><a href="{% url 'about' %}"  style="color:white">About</a></li>                    
+                    <li><a href="{% url 'about' %}" style="color:white">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'userLogOut' %}" style="color:white">
+                        <span class="glyphicon glyphicon-log-in" style="color:white">
+                            </span>Welcome {{userList.firstname}} {{userList.lastname}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div class="container-fluid chartTop rankBackground"  style="background-color: #00C5FF">
+   
+<div id="chartContainer" style="height: 420px; width: 100%; margin-top:70px;"></div>
+     {% if univ_list %}
+                        {% for user in univ_list %}
+                       <input type="hidden" id="uor" value="{{user.uor_accep_rate}}">
+                       <input type="hidden" id="uoa" value="{{user.uoa_accep_rate}}">
+                       <input type="hidden" id="ubc" value="{{user.ubc_accep_rate}}">
+                             {% endfor %}
+                     {% endif %}
+</div>
+<footer class="container-fluid text-center footer navbar-fixed-bottom">
+        <p>
+          Developed by : Abhishekkumar Israni, Chermaraj Murugesan<br />
+          Computer Science Graduate Students<br />
+          University of Regina
+        <p>
+    </footer>
+</body>
+ </html>
+<script>
+    window.onload = function () {
+
+    var a = document.getElementById('uor').value;
+    var b = document.getElementById('uoa').value;
+    var c = document.getElementById('ubc').value;
+       
+
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light1", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "University Ranking based on your profile"
+	},
+	axisY: {
+		title: "Acceptance Rate"
+	},
+	data: [{        
+		type: "column",  
+		showInLegend: true, 
+		legendMarkerColor: "blue",
+		legendText: "MMbbl = 10 Percent",
+		dataPoints: [  
+			
+			{y: parseInt(a), label: "University of Regina" },
+			{y: parseInt(b),  label: "University of Alberta" },
+			{y: parseInt(c),  label: "University of British Columbia" }
+		]
+	}]
+});
+chart.render();
+
+}
+</script>

@@ -29,7 +29,8 @@ body, html {
 
 .parallax1 {
     /* The image used */
-    background-image: url(/static/images/study.png);
+    /*background-image: url(/static/images/study.png);*/
+    background-image: url(/static/images/HomeBackground.jpg);
     /* Set a specific height */
     height: 100%;
     /* Create the parallax scrolling effect */
@@ -43,4 +44,29 @@ footer {
     background-color: #FF4500;
     color: white;
     padding: 15px;
+    position : fixed;
+}
+
+.columnOne {
+    color: white;
+    display: table;
+    width: 100%;
+    font-size: 30px;
+}
+
+.columnInside {
+    width: 100%;
+    float: none;
+    color: white;
+    font-size: 25px;
+}
+
+.chartTop {
+    margin-top: 25px;
+    height: 100%;
+}
+
+.rankBackground {
+    background-image: url(/static/images/HomeBackground.jpg);
+    height: 100%;
 }

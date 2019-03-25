@@ -39,6 +39,9 @@
     <Compile Include="PredictiveAcceptance\filters.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PredictiveAcceptance\forms\CreateStudentProfileForms.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PredictiveAcceptance\forms\SearchUniversityForms.py">
       <SubType>Code</SubType>
     </Compile>
@@ -69,6 +72,9 @@
     <Compile Include="PredictiveAcceptance\views\SearchUniversityView.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PredictiveAcceptance\views\UnviersityRankingView.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PredictiveAcceptance\views\UserLoginView.py">
       <SubType>Code</SubType>
     </Compile>
@@ -95,6 +101,7 @@
     <Folder Include="PredictiveProject\" />
     <Folder Include="static\" />
     <Folder Include="static\images\" />
+    <Folder Include="static\js\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="libman.json" />
@@ -104,14 +111,18 @@
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\HomePage.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\index.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\layout.html" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\Logout.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\Login.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\messages.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\NavBar.html" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\universityRanking.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\UniversitySearch.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\UserRegister.html" />
     <Content Include="static\homeSearch.css" />
+    <Content Include="static\images\education.jpg" />
     <Content Include="static\images\HomeBackground.jpg" />
     <Content Include="static\images\LoginBackground.jpg" />
+    <Content Include="static\images\RankBackground.jpg" />
     <Content Include="static\images\RegisterBackground.jpg" />
     <Content Include="static\images\Register_Image.jpg" />
     <Content Include="static\images\study-abroad.jpg" />
@@ -123,6 +134,10 @@
     <Content Include="runtime.txt" />
     <Content Include="static\base.css" />
     <Content Include="static\homepage.css" />
+    <Content Include="static\images\UBC.jpg" />
+    <Content Include="static\images\UOA.jpg" />
+    <Content Include="static\images\UOR.jpg" />
+    <Content Include="static\js\UniversityRank.js" />
     <Content Include="static\Login.css" />
     <Content Include="static\site.css" />
     <Content Include="static\userRegister.css" />

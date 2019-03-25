@@ -8,38 +8,49 @@
     <div class="parallax" height="100%" >
      <div class ="Welcome">
         <div class="s01">
-      <form>
+      <form class ="SearchUniversity" method="GET" action="/searchUniversity/">
            {% csrf_token %}
         <fieldset>
           <legend>Discover the Unviersity</legend>
         </fieldset>
         <div class="inner-form">
          <div class="input-field first-wrap"> 
-            <select class="input-field second-wrap input-lg " id="location" style="width:200px;" font-size=10px;  font-family='sans-serif'>
-            <option default>Select any country</option>
-            
+            <select class="input-field second-wrap input-lg " id="location" style="width:200px;" font-size=10px;  font-family='sans-serif' name="country">
+            <option value="">Select any country</option>            
             <option value="{{ country_list.lookup_code }}">{{ country_list.lookup_value }}</option> 
            </select>
           </div>
           <div class="input-field second-wrap">
-           <select class="input-field second-wrap input-lg " id="location" style="width:200px;" font-size=10px;  font-family='sans-serif'>
-               <option default>Select any university</option>
+           <select class="input-field second-wrap input-lg " id="location" style="width:200px;" font-size=10px;  font-family='sans-serif' name="University">
+               <option value="">Select any university</option>
                {% for univ in univ_list %}
                <option value="{{ univ.university_code }}">{{ univ.university_name }}</option>
                {% endfor %}               
            </select>
           </div>
           <div class="input-field third-wrap">
-            <button class="btn-search" type="button">Search</button>
+            <button class="btn-search" input type="submit">Search</button>
           </div>
         </div>
+            <div class="columnOne">
+                {% if universities_list %}
+                     <h1>Universities in Canada for Computer Science</h1>
+                     <div class="columnInside">
+                        {% for user in universities_list %}
+                            <div class="columnInside" style="margin:10px 0;">
+                               <img src ="{% static 'images/' %}{{user.university_code}}.jpg">     <a style="margin:0 10px;cursor:pointer;color:white;">{{user.university_name}}</a>
+                                <br />
+                            </div>
+                         {% endfor %}
+                     </div>
+                     {% endif %}
+            </div>
       </form>
     </div>
-     </div>       
-    </div>
+  </div>
+        </div>
     <div class="parallax1">
-        
-    </div>
+        </div>
     <section id="home">
     </section>
 {% endblock %}

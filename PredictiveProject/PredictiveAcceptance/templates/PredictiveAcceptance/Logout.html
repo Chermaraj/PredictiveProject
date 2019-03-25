@@ -1,0 +1,46 @@
+﻿ <!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+    <title>User Logout</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"> 
+        {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">    
+    <link rel="stylesheet" href="{% static 'Login.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+          crossorigin="anonymous">
+   
+</head>
+   
+<body style="background-color: #87CEEB" class="bodyBackGround">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="card">
+                    <h4 class="card-header text-center">User Logout</h4>
+                    <div class="card-block">
+                        <form class="userLogin" method="get" action="/userLogin/">
+                            {% csrf_token %}
+                               {% if messages %}
+                            <ul class="messages">
+                            {% for message in messages %}
+                                 <li class="{{ message.tags }}">{{ message }}</li>
+                            {% endfor %}
+                             </ul>
+                            {% endif %}
+                            <div class="mx-auto text-center">
+                                <input type="submit" value="Login Again" class="btn btn-primary">
+                            </div>
+							 <div id="register-link" class="text-right">
+                                     <a href="{% url 'userRegister' %}" >Register here</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+</body>
+</html>

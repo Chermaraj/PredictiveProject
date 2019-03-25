@@ -13,18 +13,7 @@ def HomePage(request):
            
     # check if the request is post  
     if request.method =='POST':   
-  
-  
-        # In the 'form' class the clean function  
-        # is defined, if all the data is correct  
-        # as per the clean function, it returns true 
-        #if form.is_valid():   
-  
-            # Temporarily make an object to be add some 
-            # logic into the data if there is such a need 
-            # before writing to the database 
-  
-            # Creatinbg Session with logged in user   
+        if form.is_valid():    
             request.session['username'] = form.username
   
             # render it to some another page indicating username was created successfully  
@@ -35,19 +24,19 @@ def HomePage(request):
             # Redirect back to the same page if the data 
             # was invalid 
             #return render(request, "PredictiveAcceptance/Login.html", {'form':form})   
-    else: 
+    else:
   
         # If the request is a GET request then, 
         # create an empty form object and  
         # render it into the page 
-        username = request.session['username']
-        univ_list = UniversityNames.objects.all();
-        country_list = LookupValues.objects.get(lookup_type='COUNTRY')
-        form = SearchUniversity(request.GET)
-        context = {
-        "univ_list": univ_list,
-        "country_list":country_list,
-        "form" : form
-             } 
+           username = request.session['username']
+           univ_list = UniversityNames.objects.all();
+           country_list = LookupValues.objects.get(lookup_type='COUNTRY')
+           form = SearchUniversity(request.GET)
+           context = {
+               "univ_list": univ_list,
+               "country_list":country_list,
+                "form" : form
+                    } 
 
-        return render(request, 'PredictiveAcceptance/HomePage.html', context) 
+    return render(request, 'PredictiveAcceptance/HomePage.html', context)

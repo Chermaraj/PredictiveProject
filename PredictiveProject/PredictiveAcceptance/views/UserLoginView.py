@@ -41,7 +41,16 @@ def userLogin(request):
         # If the request is a GET request then, 
         # create an empty form object and  
         # render it into the page 
+        #srequest.session['username'] ='CMURUGES'
         form = userLoginForm(None)    
         return render(request, 'PredictiveAcceptance/Login.html', {'form':form}) 
 
+
+def userLogOut(request): 
+
+            #key_variable = request.session.pop('username')  
+            messages.info(request, 'You have log out successfully. See you next time!')
+            return render(request,"PredictiveAcceptance/Logout.html")
+              
+    
 

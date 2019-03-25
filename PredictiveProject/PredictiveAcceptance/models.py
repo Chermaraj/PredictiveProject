@@ -56,7 +56,7 @@ class PredictiveUsers(models.Model):
     email_address = models.CharField(unique=True, max_length=100)
     user_type_id = models.ForeignKey('UserTypes', db_column='user_type_id' ,default=lambda: get_userType(),on_delete = models.CASCADE)    
     #user_type = models.ForeignKey('UserTypes', db_column='user_type' ,default= 1)
-    created_on = models.DateTimeField(auto_now_add = True)
+    created_on = models.DateTimeField(auto_now = True)
 
     class Meta:
         managed = False
@@ -64,10 +64,7 @@ class PredictiveUsers(models.Model):
 
 
 class StudentProfiles(models.Model):
-    username = models.ForeignKey(PredictiveUsers, models.DO_NOTHING, db_column='username', primary_key=True)
-    firstname = models.CharField(max_length=30)
-    middlename = models.CharField(max_length=30, blank=True, null=True)
-    lastname = models.CharField(max_length=20)
+    user = models.ForeignKey(PredictiveUsers, models.DO_NOTHING, primary_key=True)
     grescore = models.IntegerField()
     englishtest = models.IntegerField()
     undergradcgpa = models.IntegerField()
@@ -141,3 +138,15 @@ class UserTypes(models.Model):
     class Meta:
         managed = False
         db_table = 'user_types'
+
+
+class UniversityAcceptanceRates(models.Model):
+    student_user = models.ForeignKey(PredictiveUsers, models.DO_NOTHING, primary_key=True)
+    uor_accep_rate = models.IntegerField(blank=True, null=True)
+    uoa_accep_rate = models.IntegerField(blank=True, null=True)
+    ubc_accep_rate = models.IntegerField(blank=True, null=True)
+    created_on = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'university_acceptance_rates'
