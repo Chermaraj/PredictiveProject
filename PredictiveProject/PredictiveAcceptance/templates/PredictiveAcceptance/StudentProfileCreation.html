@@ -7,7 +7,14 @@
 <fieldset class="card-header text-center  profileForm">
                 <legend>Student Profile Form</legend>
                 </fieldset>
-                       
+                           {% csrf_token %}
+                            {% if messages %}
+                            <ul class="messages">
+                            {% for message in messages %}
+                                 <li class="{{ message.tags }}">{{ message }}</li>
+                            {% endfor %}
+                             </ul>
+                            {% endif %}
                         <form  method="POST" action="/StudentProfileCreation/">
                             {% csrf_token %}
                             <div class="form-label-group">
@@ -24,7 +31,7 @@
                             </div>
                             
                             <div class="form-label-group">
-                            <label class="profileLabel">GRE Score</label>
+                            <label class="profileLabel mandatory">GRE Score</label>
                                 {{form.grescore }}
                             <div class="form-group has-danger">
                             <div class="form-control-feedback">
@@ -32,7 +39,7 @@
                             </div>
 							</div>
                             <div class="form-label-group">
-                            <label class="profileLabel">English Test Score (Ex.8.0)</label>
+                            <label class="profileLabel mandatory">English Test Score (Ex.8.0)</label>
                             {{ form.englishtest }}
                             <div class="form-group has-danger">
                             <div class="form-control-feedback">
@@ -40,7 +47,7 @@
                             </div>
 							</div>
                             <div class="form-label-group">
-                            <label class="profileLabel">Undergraduate CGPA (Ex.7.5)</label>
+                            <label class="profileLabel mandatory">Undergraduate CGPA (Ex.7.5)</label>
                             {{ form.undergradcgpa }}
                             <div class="form-group has-danger">
                             <div class="form-control-feedback">
@@ -48,7 +55,7 @@
                             </div>
 							</div>
                             <div class="form-label-group">
-                            <label class="profileLabel">Work Experience (in Months)</label>
+                            <label class="profileLabel mandatory">Work Experience (in Months)</label>
                             {{ form.workex_months }}
                             <div class="form-group has-danger">
                             <div class="form-control-feedback">
@@ -56,7 +63,7 @@
                             </div>
 							</div>
                             <div class="form-label-group">
-                            <label class="profileLabel">Rate your research skills (%)</label>
+                            <label class="profileLabel mandatory">Rate your research skills (%)</label>
                             {{ form.research_skills }}
                             <div class="form-group has-danger">
                             <div class="form-control-feedback">{{ form.research_skills.errors }}</div>

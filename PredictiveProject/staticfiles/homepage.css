@@ -44,7 +44,6 @@ footer {
     background-color: #FF4500;
     color: white;
     padding: 15px;
-    position : fixed;
 }
 
 .columnOne {
@@ -71,7 +70,53 @@ footer {
     height: 100%;
 }
 
-.profile{
-    margin-bottom : 30px;
-    margin-top : 140px;
+.profile {
+    background-image: url(/static/images/HomeBackground.jpg);
+    height: 100%;
+}
+
+.profileForm {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+    position: center;
+    display: flex;
+}
+
+.profileBackGround {
+    background-image: url(/static/images/HomeBackground.jpg);
+    height: 100%;
+}
+
+.profileLabel {
+    color: white;
+    font-size: 20px;
+}
+
+.profileForm legend {
+    font-size: 30px;
+    color: #fff;
+    width: 150%;
+}
+
+.GreWidth {
+    width: 90px;
+}
+
+.engWidth {
+    width: 50px;
+}
+
+
+.CGPAWidth {
+    width: 50px;
+}
+
+.WorkExWidth {
+    width: 70px;
+}
+
+.SkillWidth {
+    width: 90px;
 }

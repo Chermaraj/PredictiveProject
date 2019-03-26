@@ -33,12 +33,12 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav" style="color:white">
-                    <li><a href="{% url 'HomePage' %}" style="color:white">Home</a></li>                    
-                    <li><a href="{% url 'about' %}"  style="color:white">Profile</a></li>                                    
-                    <li><a href="{% url 'universityRank' %}"  style="color:white">Unviersity Ranking</a></li>  
-                    <li><a href="{% url 'about' %}"  style="color:white">Unviersities</a></li>  
-                    <li><a href="{% url 'about' %}"  style="color:white">About</a></li>                    
-                    <li><a href="{% url 'about' %}" style="color:white">Contact</a></li>
+                    <li><a href="{% url 'HomePage' %}" style="color:white;cursor:pointer">Home</a></li>                    
+                    <li><a href="{% url 'StudentProfileCreation' %}"  style="color:white;cursor:pointer">Profile</a></li>                                    
+                    <li><a href="{% url 'universityRank' %}"  style="color:white;cursor:pointer">Unviersity Ranking</a></li>  
+                    <li><a href="{% url 'about' %}"  style="color:white;cursor:pointer">Unviersities</a></li>  
+                    <li><a href="{% url 'about' %}"  style="color:white;cursor:pointer">About</a></li>                    
+                    <li><a href="{% url 'about' %}" style="color:white;cursor:pointer">Contact</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{% url 'userLogOut' %}" style="color:white">
@@ -49,16 +49,17 @@
         </div>
     </nav>
 <div class="container-fluid chartTop rankBackground"  style="background-color: #00C5FF">
-   
+<h1 class="AccpHeader">{{ message_list}} </h1>
+ {% if univ_list %}  
 <div id="chartContainer" style="height: 420px; width: 100%; margin-top:70px;"></div>
      {% if univ_list %}
-                        {% for user in univ_list %}
-                       <input type="hidden" id="uor" value="{{user.uor_accep_rate}}">
-                       <input type="hidden" id="uoa" value="{{user.uoa_accep_rate}}">
-                       <input type="hidden" id="ubc" value="{{user.ubc_accep_rate}}">
-                             {% endfor %}
+                       <input type="hidden" id="uor" value="{{univ_list.uor_accep_rate}}">
+                       <input type="hidden" id="uoa" value="{{univ_list.uoa_accep_rate}}">
+                       <input type="hidden" id="ubc" value="{{univ_list.ubc_accep_rate}}">
+     
                      {% endif %}
 </div>
+ {% endif %}
 <footer class="container-fluid text-center footer navbar-fixed-bottom">
         <p>
           Developed by : Abhishekkumar Israni, Chermaraj Murugesan<br />

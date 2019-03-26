@@ -1,0 +1,18 @@
+﻿{% extends "PredictiveAcceptance/base.html" %}
+{% load staticfiles %}   
+{% block content %}
+<div class="container-fluid profileBackGround">
+
+    
+ <h1 class="AccpHeader">{{ message_list}} </h1>
+    
+<div class="col-md-4 col-md-offset-4">
+             
+                   {% if univ_list %}
+                              <h1 class="AccpHeader">Acceptance Rate</h1>
+                             <h2 class="AccpRate">{{univ_list}}%</h2>
+                   {% endif %}
+</div>
+    </div>
+{% endblock %}
+

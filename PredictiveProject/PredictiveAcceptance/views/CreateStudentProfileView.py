@@ -1,4 +1,4 @@
-from django.shortcuts import HttpResponse, render, redirect
+from django.shortcuts import HttpResponse, render, redirect, get_object_or_404
 from PredictiveAcceptance.forms.CreateStudentProfileForms import CreateStudentProfileForm
 from PredictiveAcceptance.models import StudentProfiles, PredictiveUsers
 from django.contrib import messages
@@ -7,7 +7,8 @@ def StudentProfileCreation(request):
     username = request.session['username']
     form = CreateStudentProfileForm(request.POST or None)
     userList = PredictiveUsers.objects.filter(username=username).get()
-  
+    user_id = PredictiveUsers.objects.values_list('user_id').filter(username=username).get()[0]
+    userObj = get_object_or_404(PredictiveUsers ,user_id=user_id) 
     if request.method =='POST':   
   
         if form.is_valid():   
@@ -23,16 +24,25 @@ def StudentProfileCreation(request):
             newData.research_skills   = form.cleaned_data.get('research_skills')
 
             newData.save()
+
+            system_messages = messages.get_messages(request)
+            for message in system_messages:
+             pass
+            system_messages.used = True
    
-            messages.success(request, 'Your Profile has been created successfully', extra_tags='alert')
-  
-            return redirect('/StudentProfileCreation/')
+            #messages.success(request, 'Your Profile has been created successfully', extra_tags='alert')
+            messages.success(request, 'Your Profile has been saved successfully.You can check the acceptance rate', extra_tags='alert')
+              
+            return redirect( "/predictAcceptance/", {'user_id':user_id}) 
+            #return render(request, "PredictiveAcceptance/StudentProfileCreation.html", {'form':form ,'userList':userList})   
+
+
         else:            
             
             return render(request, "PredictiveAcceptance/StudentProfileCreation.html", {'form':form ,'userList':userList})   
     else: 
           
-          form = CreateStudentProfileForm(None)   
+          form = CreateStudentProfileForm(instance = userObj)   
           return render(request, 'PredictiveAcceptance/StudentProfileCreation.html', {'form':form, 'userList':userList}) 
          
            

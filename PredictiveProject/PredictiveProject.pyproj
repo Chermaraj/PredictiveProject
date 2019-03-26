@@ -51,7 +51,13 @@
     <Compile Include="PredictiveAcceptance\forms\UserRegisterForms.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PredictiveAcceptance\training_models\PredictRegressionModel.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PredictiveAcceptance\validation.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PredictiveAcceptance\views\AcceptanceRateView.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PredictiveAcceptance\views\CreateStudentProfileView.py">
@@ -66,10 +72,13 @@
     <Compile Include="PredictiveAcceptance\migrations\__init__.py" />
     <Compile Include="PredictiveAcceptance\models.py" />
     <Compile Include="PredictiveAcceptance\tests.py" />
-    <Compile Include="PredictiveAcceptance\training_models\ubc_regression_model.py">
+    <Compile Include="PredictiveAcceptance\training_models\RegressionModel.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PredictiveAcceptance\views\HomePageView.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PredictiveAcceptance\views\PredictAcceptRateView.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PredictiveAcceptance\views\SearchUniversityView.py">
@@ -109,15 +118,14 @@
   <ItemGroup>
     <Content Include="libman.json" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\about.html" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\AcceptanceRate.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\base.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\footer.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\HomePage.html" />
-    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\index.html" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\contact.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\layout.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\Logout.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\Login.html" />
-    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\messages.html" />
-    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\NavBar.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\StudentProfileCreation.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\universityRanking.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\UniversitySearch.html" />

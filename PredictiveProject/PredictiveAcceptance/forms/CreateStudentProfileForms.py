@@ -7,7 +7,7 @@ from PredictiveAcceptance.models import StudentProfiles
 class CreateStudentProfileForm(forms.ModelForm):
 
       grescore      = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'form-control GreWidth',
-                                       'maxlength': '3',
+                                       'maxlength': '3','min':'260', 'max':'340',
                                        'required': True}),
                                        ) 
 

@@ -1,5 +1,5 @@
 from django.shortcuts import HttpResponse, render, redirect
-from PredictiveAcceptance.models import UniversityAcceptanceRates
+from PredictiveAcceptance.models import UniversityAcceptanceRates,PredictiveUsers
 
 def universityRank(request): 
 
@@ -37,9 +37,20 @@ def universityRank(request):
         # If the request is a GET request then, 
         # create an empty form object and  
         # render it into the page 
-        #srequest.session['username'] ='CMURUGES'
+        username = request.session['username']
+        user_id = PredictiveUsers.objects.values_list('user_id').filter(username=username).get()[0]
         #form = userLoginForm(None)    
-        univ_list = UniversityAcceptanceRates.objects.all();
+        student_user_id = UniversityAcceptanceRates.objects.filter(student_user_id=user_id)
+        #.values_list('student_user_id')
+        if not student_user_id.exists():
+            context = {
+               "message_list": "Please create your profile in system inorder to analyse it",
+                    } 
+
+            return render(request, 'PredictiveAcceptance/universityRanking.html',context)
+
+        
+        univ_list = UniversityAcceptanceRates.objects.filter(student_user_id=user_id).get()
         context = {
                "univ_list": univ_list,
                     } 

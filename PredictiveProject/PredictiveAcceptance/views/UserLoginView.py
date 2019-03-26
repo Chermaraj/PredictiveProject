@@ -3,7 +3,7 @@ from PredictiveAcceptance.forms.UserLoginForms import userLoginForm
 from PredictiveAcceptance.models import PredictiveUsers
 from PredictiveAcceptance.models import UserTypes
 from django.contrib import messages
-
+from django.core.cache import cache
 
 def userLogin(request): 
     request.session['username'] = None
@@ -49,6 +49,12 @@ def userLogin(request):
 def userLogOut(request): 
 
             #key_variable = request.session.pop('username')  
+            try:
+                cache._cache.flush_all()
+            except AttributeError:
+                pass
+
+           
             messages.info(request, 'You have log out successfully. See you next time!')
             return render(request,"PredictiveAcceptance/Logout.html")
               

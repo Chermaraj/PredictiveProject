@@ -9,7 +9,7 @@ body, html {
 
 .parallax {
     /* The image used */
-    background-image: url(/static/images/HomeBackground.jpg);
+    background-image: url("/static/images/HomeBackground.844ebafd4b17.jpg");
     /* Set a specific height */
     height: 100%;
     /* Create the parallax scrolling effect */
@@ -29,8 +29,8 @@ body, html {
 
 .parallax1 {
     /* The image used */
-    /*background-image: url(/static/images/study.png);*/
-    background-image: url(/static/images/HomeBackground.jpg);
+    /*background-image: url("/static/images/study.c38fdd9a457f.png");*/
+    background-image: url("/static/images/HomeBackground.844ebafd4b17.jpg");
     /* Set a specific height */
     height: 100%;
     /* Create the parallax scrolling effect */
@@ -66,12 +66,12 @@ footer {
 }
 
 .rankBackground {
-    background-image: url(/static/images/HomeBackground.jpg);
+    background-image: url("/static/images/HomeBackground.844ebafd4b17.jpg");
     height: 100%;
 }
 
 .profile {
-    background-image: url(/static/images/HomeBackground.jpg);
+    background-image: url("/static/images/HomeBackground.844ebafd4b17.jpg");
     height: 100%;
 }
 
@@ -85,7 +85,7 @@ footer {
 }
 
 .profileBackGround {
-    background-image: url(/static/images/HomeBackground.jpg);
+    background-image: url("/static/images/HomeBackground.844ebafd4b17.jpg");
     height: 100%;
 }
 
@@ -99,7 +99,6 @@ footer {
     color: #fff;
     width: 150%;
 }
-
 
 .GreWidth {
     width: 90px;
@@ -120,28 +119,4 @@ footer {
 
 .SkillWidth {
     width: 90px;
-}
-
-
-.mandatory:before {
-    content: "*";
-    color: red;
-}
-
-.AccpRate {
-    font-weight: bold;
-    color: #fff;
-    font-size: 190px;
-    font-family: sans-serif;
-    margin-left : 50px;
-    margin-top :30px;
-}
-
-.AccpHeader {
-    font-weight: bold;
-    color: #fff;
-    font-size: 50px;
-    font-family: sans-serif;
-    margin-top: 100px;
-    margin-left: 50px;
 }

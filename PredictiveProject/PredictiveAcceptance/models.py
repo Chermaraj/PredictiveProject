@@ -56,7 +56,7 @@ class PredictiveUsers(models.Model):
     email_address = models.CharField(unique=True, max_length=100)
     user_type_id = models.ForeignKey('UserTypes', db_column='user_type_id' ,default=lambda: get_userType(),on_delete = models.CASCADE)    
     #user_type = models.ForeignKey('UserTypes', db_column='user_type' ,default= 1)
-    created_on = models.DateTimeField(auto_now_add = True)
+    created_on = models.DateTimeField(auto_now = True)
 
     class Meta:
         managed = False
@@ -145,7 +145,7 @@ class UniversityAcceptanceRates(models.Model):
     uor_accep_rate = models.IntegerField(blank=True, null=True)
     uoa_accep_rate = models.IntegerField(blank=True, null=True)
     ubc_accep_rate = models.IntegerField(blank=True, null=True)
-    created_on = models.DateTimeField()
+    created_on = models.DateTimeField(auto_now = True)
 
     class Meta:
         managed = False

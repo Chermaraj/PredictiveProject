@@ -21,7 +21,7 @@ class userRegisterForm(forms.ModelForm):
                                       'required': True}))
 
      middlename  = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control',
-                                      'placeholder': 'Enter Middle Name', 'pattern':'[A-Za-z ]+',
+                                      'placeholder': 'Enter Middle Name',
                                       'maxlength': '30'}))
 
      lastname    = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control',
