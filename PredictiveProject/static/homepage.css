@@ -145,3 +145,24 @@ footer {
     margin-top: 100px;
     margin-left: 50px;
 }
+
+
+.ContactHeader {
+    font-weight: bold;
+    color: #fff;
+    font-size: 30px;
+    font-family: sans-serif;
+    margin-top: 70px;
+    margin-left: 70px;
+    margin-bottom : 50px;
+}
+
+
+
+.aboutPara {
+    color: #fff;
+    font-size: 17px;
+    font-family: sans-serif;
+    margin-left: 70px;
+}
+

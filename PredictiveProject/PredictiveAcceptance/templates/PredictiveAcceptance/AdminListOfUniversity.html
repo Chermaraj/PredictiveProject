@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>View Universities</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+            font-color: #000000;
+            background-color: #483D8B;
+            border-color: #483D8B;
+        }
+
+		footer {
+            background-color: #483D8B;
+            color: white;
+            padding: 15px;
+        }
+        body {
+           background: url(back.jpg);		
+		}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        
+        <div class="container-fluid">
+            <div class="navbar-header">
+             
+                <a class="navbar-brand" style="color:white" href="#">Logo</a>
+            </div>
+            <div class="collapse navbar-collapse"  id="myNavbar">
+                <ul class="nav navbar-nav" >
+                    <li><a href="{% url 'home' %}" style="color:white">Admin Home</a></li>
+                    <li><a href="{% url 'summary' %}" style="color:white">Add Summary</a></li>
+                </ul>
+				<ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'userLogOut' %}" style="color:white"><span class="glyphicon glyphicon-log-in" style="color:white"></span> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+	<section>
+         <table class = "table table-hover">
+   <caption>University Information </caption>
+   
+   <thead>
+      <tr>
+         <th>University Code</th>
+         <th>Average Gre Score</th>
+         <th>Average English Score</th>
+         <th>Average Undergrad CGPA </th>
+         <th>Average Work Experience</th>
+         <th>Average Research Skills </th>
+         <th>Average Acceptance Rate</th>
+          <th>Update University Summary</th>
+      </tr>
+   </thead>
+   
+   <tbody>  
+       {% for info in UniversityObj %}
+      <tr>
+         <td>{{ info.university_code }}</td>
+         <td>{{ info.avg_grescore }}</td>
+         <td>{{ info.avg_english_score }}</td>
+         <td>{{ info.avg_undergradcgpa }} CGPA</td>
+         <td>{{ info.avg_workex_months }} Months</td>
+         <td>{{ info.avg_research_skills }}%</td>
+         <td>{{ info.avg_acceptancepercentage }}</td>
+          <td><a href="{% url 'editSummary'  info.university_code  %}" style="color:black">Edit</a></td>
+      </tr>
+       {% endfor %}
+   </tbody>
+   
+</table>
+
+
+
+    </section>
+	
+	
+	 <footer class="container-fluid text-center footer navbar-fixed-bottom">
+        <p>
+            Developed by : Abhishekkumar Israni, Chermaraj Murugesan<br />
+            Computer Science Graduate Students<br />
+            University of Regina
+        <p>
+    </footer>
+</body>
+</html>

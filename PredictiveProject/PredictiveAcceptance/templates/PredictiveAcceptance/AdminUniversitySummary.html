@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>University Summary</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+            font-color: #000000;
+            background-color: #483D8B;
+            border-color: #483D8B;
+        }
+
+        input.form-control { 
+            width:70px;
+
+        }
+
+		footer {
+            background-color: #483D8B;
+            color: white;
+            padding: 15px;
+            height: 18%;
+            position: fixed;
+			
+        }
+        div#push {
+            height: 120px;
+            }
+
+        
+        
+		.body {
+           background: url(back.jpg);
+          
+		}
+        
+    </style>
+</head>
+<body >
+    <nav class="navbar navbar-inverse">
+        
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse"  id="myNavbar">
+                <ul class="nav navbar-nav" >
+                    <li><a href="{% url 'home' %}" style="color:white">Admin Home</a></li>
+                    <li><a href="{% url 'list' %}" style="color:white">View Universities</a></li>
+                </ul>
+				<ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'userLogOut' %}" style="color:white"><span class="glyphicon glyphicon-log-in" style="color:white"></span> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!-- form Add university Start -->
+<div class="container" style="margin-top:25px;">
+  <div class="row"> 
+   <div class="col-sm-4"></div>
+     <div class="col-sm-3">
+
+      <form method="POST" action=" ">
+          {% csrf_token %}
+         <div class="form-group ">
+         <label >Enter University Code</label>
+         <!--<<input type="text" class="form-control" id="university Name"  placeholder="Enter University Name">-->
+          {{ form.university_code}}
+            <div class="form-group has-danger">
+             <div class="form-control-feedback">{{ form.university_code.errors }}</div>
+             </div>
+         </div>
+          <div class="form-group ">
+         <!--<<input type="text" class="form-control" id="university Name"  placeholder="Enter University Name">-->
+          <label >Enter Average Gre Score</label>
+           {{ form.avg_grescore }}
+            <div class="form-group has-error">
+             {{ form.avg_grescore.errors }}
+             </div>
+         </div>
+         <div class="form-group">
+         <label >Enter English Test Score</label>
+         <!--<<input type="text" class="form-control" id="university Name"  placeholder="Enter University Name">-->
+         {{ form.avg_eng_score }}
+         </div>
+          
+          <div class="form-group">
+         <label >Enter Undergratuate CGPA Score</label>
+         <!--<<input type="text" class="form-control" id="university Name"  placeholder="Enter University Name">-->
+          {{ form.avg_undergradcgpa }}
+         </div>
+          <div class="form-group">
+         <label >Enter Average Work Experience in Months</label>
+         <!--<<input type="text" class="form-control" id="university Name"  placeholder="Enter University Name">-->
+          {{ form.avg_workex_months }}
+         </div>
+          <div class="form-group">
+         <label >Enter Average Research Skills</label>
+         <!--<<input type="text" class="form-control" id="university Name"  placeholder="Enter University Name">-->
+          {{ form.avg_research_skills }}
+         </div>
+          <div class="form-group">
+         <label >Enter Average Acceptance Percentage</label>
+         <!--<<input type="text" class="form-control" id="university Name"  placeholder="Enter University Name">-->
+          {{ form.avg_acceptancepercentage }}
+         </div>
+         <button type="submit" class="btn btn-primary">Submit</button>
+      </form>	
+      </div>
+     <div class="col-sm-3"></div>
+  </div> 
+</div>
+
+
+    
+    
+    
+    <div id="push"></div>
+<!-- form Add university End -->
+	 <footer class="container-fluid text-center footer navbar-fixed-bottom">
+        <p>
+            Developed by : Abhishekkumar Israni, Chermaraj Murugesan<br />
+            Computer Science Graduate Students<br />
+            University of Regina
+        <p>
+    </footer>
+   
+</body>
+</html>

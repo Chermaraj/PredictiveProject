@@ -25,10 +25,11 @@ def userLogin(request):
             # logic into the data if there is such a need 
             # before writing to the database 
             if form.cleaned_data.get('username'):
-            # Creating Session with logged in user   
-               request.session['username'] = form.cleaned_data.get('username')
-  
-            # render it to some another page indicating username was created successfully  
+                request.session['username'] = form.cleaned_data.get('username')
+
+            userType = form.cleaned_data.get('userType');
+            print(userType)
+
             return redirect('HomePage')
               
         else: 

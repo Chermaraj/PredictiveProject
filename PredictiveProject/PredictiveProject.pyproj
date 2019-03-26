@@ -45,6 +45,7 @@
     <Compile Include="PredictiveAcceptance\forms\SearchUniversityForms.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PredictiveAcceptance\forms\UniversitySummaryAndInfoForms.py" />
     <Compile Include="PredictiveAcceptance\forms\UserLoginForms.py">
       <SubType>Code</SubType>
     </Compile>
@@ -60,6 +61,7 @@
     <Compile Include="PredictiveAcceptance\views\AcceptanceRateView.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PredictiveAcceptance\views\AdminSiteViews.py" />
     <Compile Include="PredictiveAcceptance\views\CreateStudentProfileView.py">
       <SubType>Code</SubType>
     </Compile>
@@ -119,6 +121,9 @@
     <Content Include="libman.json" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\about.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\AcceptanceRate.html" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\AdminHome.html" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\AdminListOfUniversity.html" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\AdminUniversitySummary.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\base.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\footer.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\HomePage.html" />

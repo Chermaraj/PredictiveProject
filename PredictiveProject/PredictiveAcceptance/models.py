@@ -80,7 +80,7 @@ class StudentProfiles(models.Model):
 class UniversityNames(models.Model):
     university_code = models.CharField(primary_key=True, max_length=10)
     university_name = models.CharField(unique=True, max_length=50)
-    created_on = models.DateTimeField()
+    created_on = models.DateTimeField(auto_now = True)
 
     class Meta:
         managed = False
@@ -114,13 +114,12 @@ class UniversitySampleData(models.Model):
 class UniversitySummaries(models.Model):
     university_code = models.ForeignKey(UniversityNames, models.DO_NOTHING, db_column='university_code', primary_key=True)
     avg_grescore = models.IntegerField()
-    avg_ielts = models.IntegerField()
-    avg_toefl = models.IntegerField()
-    avg_undergradcgpa = models.IntegerField()
+    avg_eng_score = models.DecimalField(max_digits=2, decimal_places=1)
+    avg_undergradcgpa = models.DecimalField(max_digits=2, decimal_places=1)
     avg_workex_months = models.IntegerField()
     avg_research_skills = models.IntegerField()
     avg_acceptancepercentage = models.IntegerField()
-    created_on = models.DateTimeField()
+    created_on = models.DateTimeField(auto_now = True)
 
     class Meta:
         managed = False
@@ -130,7 +129,7 @@ class UniversitySummaries(models.Model):
 class UserTypes(models.Model):
     user_type_id = models.IntegerField(primary_key=True)
     user_type = models.CharField(unique=True, max_length=20)
-    created_on = models.DateTimeField()
+    created_on = models.DateTimeField(auto_now = True)
 
     def __str__(self):
      return u'{0}'.format(self.user_type)
