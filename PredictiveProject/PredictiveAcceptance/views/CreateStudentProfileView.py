@@ -8,7 +8,7 @@ def StudentProfileCreation(request):
     form = CreateStudentProfileForm(request.POST or None)
     userList = PredictiveUsers.objects.filter(username=username).get()
     user_id = PredictiveUsers.objects.values_list('user_id').filter(username=username).get()[0]
-    userObj = get_object_or_404(PredictiveUsers ,user_id=user_id) 
+    userObj = get_object_or_404(StudentProfiles ,user=user_id) 
     if request.method =='POST':   
   
         if form.is_valid():   
