@@ -86,6 +86,9 @@
     <Compile Include="PredictiveAcceptance\views\SearchUniversityView.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PredictiveAcceptance\views\UniversityInfoView.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PredictiveAcceptance\views\UnviersityRankingView.py">
       <SubType>Code</SubType>
     </Compile>
@@ -135,6 +138,7 @@
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\universityRanking.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\UniversitySearch.html" />
     <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\UserRegister.html" />
+    <Content Include="PredictiveAcceptance\templates\PredictiveAcceptance\ViewUniversityInfo.html" />
     <Content Include="static\homeSearch.css" />
     <Content Include="static\images\education.jpg" />
     <Content Include="static\images\HomeBackground.jpg" />

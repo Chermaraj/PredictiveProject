@@ -67,11 +67,11 @@
       <tr>
          <td>{{ info.university_code }}</td>
          <td>{{ info.avg_grescore }}</td>
-         <td>{{ info.avg_english_score }}</td>
+         <td>{{ info.avg_eng_score }}</td>
          <td>{{ info.avg_undergradcgpa }} CGPA</td>
          <td>{{ info.avg_workex_months }} Months</td>
          <td>{{ info.avg_research_skills }}%</td>
-         <td>{{ info.avg_acceptancepercentage }}</td>
+         <td>{{ info.avg_acceptancepercentage }}%</td>
           <td><a href="{% url 'editSummary'  info.university_code  %}" style="color:black">Edit</a></td>
       </tr>
        {% endfor %}

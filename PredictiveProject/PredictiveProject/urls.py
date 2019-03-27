@@ -4,7 +4,7 @@ Definition of urls for PredictiveProject.
 
 from django.conf.urls import include,url
 from django.urls import path,re_path
-from PredictiveAcceptance.views import AdminSiteViews,CreateUniversityView,SearchUniversityView,HomePageView,UserRegisterView,UserLoginView,UnviersityRankingView,CreateStudentProfileView,PredictAcceptRateView,AcceptanceRateView
+from PredictiveAcceptance.views import AdminSiteViews,CreateUniversityView,SearchUniversityView,HomePageView,UserRegisterView,UserLoginView,UnviersityRankingView,CreateStudentProfileView,PredictAcceptRateView,AcceptanceRateView,UniversityInfoView
 #Django processess URL patterns in the order they appear in array 
 
 urlpatterns = [
@@ -18,7 +18,8 @@ urlpatterns = [
     url(r'^userLogOut/$', UserLoginView.userLogOut, name='userLogOut'),         
     url(r'^universityRank/$', UnviersityRankingView.universityRank, name='universityRank'),    
     url(r'^StudentProfileCreation/$', CreateStudentProfileView.StudentProfileCreation, name='StudentProfileCreation'),
-    url(r'^predictAcceptance/$', PredictAcceptRateView.predictAcceptance, name='predictAcceptance'),   
+    url(r'^predictAcceptance/$', PredictAcceptRateView.predictAcceptance, name='predictAcceptance'), 
+    url(r'^viewUniversityInfo/$', UniversityInfoView.viewUniversityInfo, name='viewUniversityInfo'),
     path(r'^acceptanceRate/<str:univ_code>/$',AcceptanceRateView.acceptanceRate, name='acceptanceRate'),
     #Following are the AdminSiteURLS
     url(r'^AdminHome/$', AdminSiteViews.home, name='home'),

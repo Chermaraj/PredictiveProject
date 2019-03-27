@@ -29,8 +29,14 @@ def userLogin(request):
 
             userType = form.cleaned_data.get('userType');
             print(userType)
+            if (userType.user_type == 'Student'):
+                 return redirect('HomePage')
+            else:
+                return redirect('/AdminHome/')
 
-            return redirect('HomePage')
+            print(userType)
+
+            #return redirect('HomePage')
               
         else: 
           
