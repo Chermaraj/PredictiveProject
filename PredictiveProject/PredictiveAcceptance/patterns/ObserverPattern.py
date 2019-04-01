@@ -29,10 +29,9 @@ class studentProfileCore:
         #Setter that sets the temperature of core
         @user_id.setter
         def user_id(self, user_id):
-                '''Notify the observers whenever somebody changes the core temperature.
-                   @temp.setter notation signifies the setter method of the temp property which
-                   allows to set the temperature using the assignment operator i.e. objectOfCore.temp = 300
-                   sets the temp attribute to 50'''
+                '''Notify the observers whenever student changes the profile details.
+                   @user_id.setter notation signifies the setter method of the user_id property which
+                   allows to set the temperature using the assignment operator'''
                 self._user_id= user_id
                 self.notify()
                  
