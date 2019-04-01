@@ -52,6 +52,9 @@
     <Compile Include="PredictiveAcceptance\forms\UserRegisterForms.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PredictiveAcceptance\patterns\ObserverPattern.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PredictiveAcceptance\training_models\PredictRegressionModel.py">
       <SubType>Code</SubType>
     </Compile>
@@ -111,6 +114,7 @@
     <Folder Include="PredictiveAcceptance\" />
     <Folder Include="PredictiveAcceptance\migrations\" />
     <Folder Include="PredictiveAcceptance\forms\" />
+    <Folder Include="PredictiveAcceptance\patterns\" />
     <Folder Include="PredictiveAcceptance\views\" />
     <Folder Include="PredictiveAcceptance\training_models\" />
     <Folder Include="PredictiveAcceptance\templates\" />
